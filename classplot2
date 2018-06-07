@@ -1,0 +1,27 @@
+plt.figure(figsize=(10,6))
+plt.style.use('fivethirtyeight')
+X_set, y_set = x_train, y_train
+X1, X2 = np.meshgrid(np.arange(start = X_set[:, 0].min() - 1, stop = X_set[:, 0].max() + 1, step = 0.01),
+                     np.arange(start = X_set[:, 1].min() - 1, stop = X_set[:, 1].max() + 1, step = 0.01))
+plt.contourf(X1, X2, classifier.predict(np.array([X1.ravel(), X2.ravel()]).T).reshape(X1.shape),
+             alpha = 0.1, cmap = ListedColormap(('red', 'green','blue')))
+plt.xlim(X1.min(), X1.max())
+plt.ylim(X2.min(), X2.max())
+
+for i in range(len(y_set)):
+    if y_set[i] == 0:
+        c = 'red'
+    elif y_set[i] == 1:
+        c = 'green'
+        
+    else:
+        c = 'blue'
+        
+    plt.scatter(X_set[i,0], X_set[i,1],color = c)
+    
+
+plt.title('Logistic Regression (Training set)')
+plt.xlabel('X - label name')
+plt.ylabel('y - label name')
+#plt.legend()
+plt.show()

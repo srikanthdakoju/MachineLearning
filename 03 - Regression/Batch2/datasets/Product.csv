@@ -1,0 +1,11 @@
+ID,Salary,Place,Purchased
+112885,27,Hyderabad,yes
+134419,26,Hyderabad,yes
+189111,30,Chennai,no
+189511,50,Banglore,yes
+189915,28,,no
+190319,30,Hyderabad,no
+190723,,Chennai,yes
+191127,51,Banglore,yes
+191531,45,Chennai,no
+191935,15,Hyderabad,yes
